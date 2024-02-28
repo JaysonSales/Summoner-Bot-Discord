@@ -1,10 +1,12 @@
 require("dotenv").config();
 const { Client, GatewayIntentBits } = require("discord.js");
-const keep_alive = require("../keep_alive.js")
+const keep_alive = require("../keep_alive.js");
 const pingCommand = require("./commands/ping.js");
 const helloCommand = require("./commands/hello.js");
 const pongAction = require("./actions/ping.js");
 const helloAction = require("./actions/hello.js");
+
+const { MAINSERVERID, TOKEN } = process.env;
 
 const client = new Client({
   intents: [
@@ -17,9 +19,16 @@ const client = new Client({
 client.on("ready", () => {
   console.log(`${client.user.tag} is ready!`);
   client.user.setActivity("Hello World");
+  client.application.commands.create(pingCommand, MAINSERVERID);
+  client.application.commands.create(helloCommand, MAINSERVERID);
+});
 
-  client.application.commands.create(pingCommand, process.env.MAINSERVERID);
-  client.application.commands.create(helloCommand, process.env.MAINSERVERID);
+//Log Message
+const channel = ["850193107684425748"];
+client.on("messageCreate", async (message) => {
+  if (!channel.includes(message.channelId) || message.author.bot) return;
+
+  return console.log(message.content);
 });
 
 client.on("interactionCreate", async (interaction) => {
@@ -44,4 +53,4 @@ client.on("guildMemberAdd", async (member) => {
   }
 });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
