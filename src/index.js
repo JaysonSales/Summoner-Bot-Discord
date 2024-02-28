@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { Client, GatewayIntentBits } = require("discord.js");
+const keep_alive = require("../keep_alive.js")
 const pingCommand = require("./commands/ping.js");
 const helloCommand = require("./commands/hello.js");
 const pongAction = require("./actions/ping.js");
