@@ -5,4 +5,4 @@ http
     res.write("Bot is now connected");
     res.end();
   })
-  .listen(0000);
+  .listen(10000);
