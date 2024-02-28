@@ -4,7 +4,6 @@ const pingCommand = require("./commands/ping.js");
 const helloCommand = require("./commands/hello.js");
 const pongAction = require("./actions/ping.js");
 const helloAction = require("./actions/hello.js");
-// test
 
 const client = new Client({
   intents: [
