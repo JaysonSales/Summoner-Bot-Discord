@@ -3,8 +3,7 @@
     "discord.js": "^14.12.1",
     "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
-    "openai": "^4.28.0",
-    "ytdl-core": "^4.11.5"
+    "openai": "^4.28.0"
   },
   "name": "discord-bot",
   "version": "1.0.0",
@@ -19,5 +18,8 @@
   "description": "",
   "devDependencies": {
     "eslint": "^8.49.0"
+  },
+  "engines": {
+    "node": ">=20.11.0"
   }
 }
