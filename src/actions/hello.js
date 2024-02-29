@@ -4,7 +4,7 @@ module.exports = {
     if (userOption) {
       interaction.reply(`Hello, ${userOption.toString()}`);
     } else {
-      interaction.reply("Hello there");
+      interaction.reply("Mama mo hello");
     }
   },
 };
